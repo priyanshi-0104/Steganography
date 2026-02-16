@@ -1,0 +1,7 @@
+Pillow
+numpy
+opencv-python
+moviepy
+cryptography
+pycryptodome
+pyinstaller
