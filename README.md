@@ -103,38 +103,6 @@ This marker tells the decoder where the secret message ends, making decoding fas
 
 ---
 
-## ⚠ Common Issues & Fixes
-
-### 🔸 Audio Error (Read-only Buffer)
-
-**Cause:** `np.frombuffer()` returns a read-only array
-
-**Fix:**
-
-```python
-samples = np.frombuffer(frames, dtype=np.int16).copy()
-```
-
----
-
-### 🔸 Video Overflow Error
-
-**Cause:** Using `~1` on uint8 values
-
-**Fix:**
-
-```python
-frame[y][x][0] = (frame[y][x][0] & 254) | bit
-```
-
----
-
-### 🔸 Slow Video Decoding
-
-**Fix:** Stop decoding as soon as stop marker is detected
-
----
-
 ## 🎓 Viva / Interview Explanation (Short)
 
 > This project uses LSB steganography to hide messages inside text, images, audio, and video files. The least significant bit of data is modified, which does not affect the quality of the original file. NumPy is used for efficient bit manipulation, and decoding stops as soon as a stop marker is detected for better performance.
