@@ -165,4 +165,3 @@ frame[y][x][0] = (frame[y][x][0] & 254) | bit
 
 ---
 
-⭐ If you like this project, don’t forget to star the repository!
